@@ -12,7 +12,7 @@ function App() {
           <h1>Seizan</h1>
 
           <h2 className="subtitle">
-            Gashapon products — Anime Plushies, collectible figures, randomized pulls, and a lot more to come!
+            Gashapon products ——————— Anime Plushies, collectible figures, randomized pulls, and a lot more to come!
           </h2>
 
           <h2 className="subtitle">
