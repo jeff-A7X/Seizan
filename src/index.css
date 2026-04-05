@@ -12,8 +12,9 @@
   }
 
   body {
-    @apply min-h-screen bg-[#0b0c10] text-white antialiased;
+    @apply min-h-screen text-gray-900 antialiased;
     margin: 0;
+    background-color: #F2EDEA;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 }
