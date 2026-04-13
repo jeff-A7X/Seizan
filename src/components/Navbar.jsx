@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Navbar({ theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Locations', href: '#' },
-    { label: 'Products', href: '#' },
-    { label: 'Machine Types', href: '#' },
-    { label: 'Who We Are', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: "Locations", href: "#" },
+    { label: "Products", href: "#" },
+    { label: "Machine Types", href: "#" },
+    { label: "Who We Are", href: "#" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -16,7 +16,10 @@ export default function Navbar({ theme, toggleTheme }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 gap-4">
           <div className="flex-shrink-0">
-            <a href="#" className="text-3xl font-bold text-gray-900 dark:text-gray-100 tracking-wide">
+            <a
+              href="#"
+              className="text-3xl font-bold text-gray-900 dark:text-gray-100 tracking-wide"
+            >
               Seizan
             </a>
           </div>
@@ -36,29 +39,21 @@ export default function Navbar({ theme, toggleTheme }) {
           </div>
 
           <div className="hidden md:flex items-center justify-end gap-3">
-            <div className="relative w-72">
-              <span className="absolute inset-y-0 left-3 flex items-center text-gray-400 dark:text-slate-400">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3.75a7.5 7.5 0 016.15 12.9z" />
-                </svg>
-              </span>
-              <input
-                type="search"
-                placeholder="Search"
-                className="w-full rounded-full border border-gray-300 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 py-3 pl-10 pr-4 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
-              />
-            </div>
             <label className="inline-flex items-center cursor-pointer select-none">
-              <span className="mr-3 text-sm font-medium text-gray-700 dark:text-gray-300">{theme === 'dark' ? 'Dark' : 'Light'}</span>
+              <span className="mr-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                {theme === "dark" ? "Dark" : "Light"}
+              </span>
               <div className="relative">
                 <input
                   type="checkbox"
-                  checked={theme === 'dark'}
+                  checked={theme === "dark"}
                   onChange={toggleTheme}
                   className="sr-only"
                 />
                 <div className="w-14 h-8 bg-gray-300 dark:bg-slate-700 rounded-full border border-gray-300 dark:border-slate-600 transition-colors"></div>
-                <div className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white dark:bg-slate-200 shadow transform transition-transform ${theme === 'dark' ? 'translate-x-6' : ''}`}></div>
+                <div
+                  className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white dark:bg-slate-200 shadow transform transition-transform ${theme === "dark" ? "translate-x-6" : ""}`}
+                ></div>
               </div>
             </label>
           </div>
@@ -80,7 +75,9 @@ export default function Navbar({ theme, toggleTheme }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                  d={
+                    isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  }
                 />
               </svg>
             </button>
@@ -102,26 +99,6 @@ export default function Navbar({ theme, toggleTheme }) {
                 {link.label}
               </a>
             ))}
-          </div>
-          <div className="border-t border-gray-200 dark:border-slate-700 px-4 py-4 space-y-4">
-            <div className="relative">
-              <span className="absolute inset-y-0 left-3 flex items-center text-gray-400 dark:text-slate-400">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3.75a7.5 7.5 0 016.15 12.9z" />
-                </svg>
-              </span>
-              <input
-                type="search"
-                placeholder="Search"
-                className="w-full rounded-full border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 py-3 pl-10 pr-4 text-base text-gray-700 dark:text-gray-200 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
-              />
-            </div>
-            <button
-              onClick={toggleTheme}
-              className="w-full inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 py-3 text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-slate-800 transition-colors"
-            >
-              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-            </button>
           </div>
         </div>
       )}
