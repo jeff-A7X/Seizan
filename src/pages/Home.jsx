@@ -4,7 +4,7 @@ import hero2Image from "../assets/hero/hero2.png";
 import hero3Image from "../assets/hero/hero4.png";
 import hero4Image from "../assets/hero/hero5.png";
 import hero5Image from "../assets/hero/hero6.png";
-import ch2Image from "../assets/images/mascot/final/mascot2F.png";
+import ch2Image from "../assets/images/mascot/final/маскот.png";
 
 export default function Home() {
   const heroSlides = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image];
@@ -136,7 +136,7 @@ export default function Home() {
                 Seizan (logo)
               </h1>
               <h2 className="text-lg lg:text-xl font-semibold mb-6 text-red-500">
-                偉い Gashapon Experience coming to the Netherlands!
+                Gashapon Experience coming to the Netherlands!
               </h2>
               <p className="text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                 Discover the ultimate anime collectibles and plushies. Every
