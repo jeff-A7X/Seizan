@@ -1,39 +1,52 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar({ theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: "Locations", href: "#" },
-    { label: "Products", href: "#" },
-    { label: "Machine Types", href: "#" },
-    { label: "Who We Are", href: "#" },
-    { label: "Contact", href: "/contact" },
+    { label: "Locations", to: "/locations" },
+    { label: "Products", to: "/products" },
+    { label: "Machine Types", to: "/machine-types" },
+    { label: "Who We Are", to: "/who-we-are" },
+    { label: "Contact", to: "/contact" },
   ];
+
+  const linkClass = ({ isActive }) =>
+    [
+      "px-5 py-3 rounded-md text-base font-medium transition-colors",
+      isActive
+        ? "text-red-500 bg-gray-100 dark:bg-slate-800"
+        : "text-gray-700 dark:text-gray-300 hover:text-red-500 hover:bg-gray-100 dark:hover:bg-slate-800",
+    ].join(" ");
+
+  const mobileLinkClass = ({ isActive }) =>
+    [
+      "block px-4 py-3 rounded-md text-base font-medium transition-colors",
+      isActive
+        ? "text-red-500 bg-gray-50 dark:bg-slate-800"
+        : "text-gray-700 dark:text-gray-200 hover:text-red-500 hover:bg-gray-50 dark:hover:bg-slate-800",
+    ].join(" ");
 
   return (
     <nav className="sticky top-0 z-50 shadow-md border-b border-gray-200 dark:border-slate-700 bg-[#F2EDEA] dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 gap-4">
           <div className="flex-shrink-0">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-3xl font-bold text-gray-900 dark:text-gray-100 tracking-wide"
             >
               Seizan
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="px-5 py-3 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-red-500 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
-                >
+                <NavLink key={link.label} to={link.to} className={linkClass}>
                   {link.label}
-                </a>
+                </NavLink>
               ))}
             </div>
           </div>
@@ -90,14 +103,14 @@ export default function Navbar({ theme, toggleTheme }) {
         <div className="md:hidden bg-white dark:bg-slate-950 border-t border-gray-200 dark:border-slate-700 transition-colors duration-300">
           <div className="px-2 pt-3 pb-4 space-y-2">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.label}
-                href={link.href}
-                className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-red-500 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+                to={link.to}
+                className={mobileLinkClass}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
           </div>
         </div>

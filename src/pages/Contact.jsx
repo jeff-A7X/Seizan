@@ -1,9 +1,8 @@
 export default function Contact() {
   return (
-    <div className="flex items-center justify-center px-4 py-48">
+    <div className="flex items-center justify-center px-4 py-48 transition-colors duration-300">
       <div className="text-center">
-
-        <p className="text-xl font-mono text-gray-400 dark:text-gray-600 tracking-widest mb-6">
+        <p className="text-xl font-mono text-gray-500 dark:text-gray-400 tracking-widest mb-6">
           contact
         </p>
 
