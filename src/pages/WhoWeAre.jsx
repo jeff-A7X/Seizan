@@ -1,3 +1,6 @@
+import jeff2Image from "../assets/portrait/jeff2.png";
+import sam2Image from "../assets/portrait/sam2.png";
+
 export default function WhoWeAre() {
   const portraitClass =
     "w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[380px] aspect-[4/5] object-cover rounded-lg border border-gray-300/50 dark:border-slate-700/50 brightness-[1.02] contrast-[0.88] saturate-90 opacity-[0.94] shadow-sm";
@@ -15,7 +18,7 @@ export default function WhoWeAre() {
               Jeffrey
             </h2>
             <img
-              src="/portrait/jeff1.jpg"
+              src={jeff2Image}
               alt="Jeffrey"
               className={portraitClass}
             />
@@ -29,7 +32,7 @@ export default function WhoWeAre() {
               Sam
             </h2>
             <img
-              src="/portrait/sam1.jpg"
+              src={sam2Image}
               alt="Sam"
               className={portraitClass}
             />
