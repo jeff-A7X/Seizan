@@ -5,8 +5,11 @@ import hero3Image from "../assets/hero/hero4.png";
 import hero4Image from "../assets/hero/hero5.png";
 import hero5Image from "../assets/hero/hero6.png";
 import ch2Image from "../assets/images/mascot/final/маскот.png";
+import logoHeroDark from "../assets/icons/logoHeroDarkmode.png";
+import logoHeroLight from "../assets/icons/logoHeroLightmode.png";
+import Instagram from "../components/Instagram";
 
-export default function Home() {
+export default function Home({ theme }) {
   const heroSlides = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image];
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -120,9 +123,11 @@ export default function Home() {
 
         {/* Heading */}
         <div className="relative z-10 text-center">
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-[#F2EDEA] drop-shadow-lg">
-            Logo
-          </h1>
+          <img
+            src={theme === "dark" ? logoHeroDark : logoHeroLight}
+            alt="Seizan logo"
+            className="mx-auto h-40 sm:h-44 lg:h-48 drop-shadow-lg"
+          />
           <div className="mt-4 h-1 w-24 bg-red-500 mx-auto" />
         </div>
       </section>
@@ -133,7 +138,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col justify-center">
               <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-                Seizan (logo)
+                Seizan
               </h1>
               <h2 className="text-lg lg:text-xl font-semibold mb-6 text-red-500">
                 Gashapon Experience coming to the Netherlands!
@@ -156,6 +161,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+            {/* Instagram */}
+      <Instagram username="seizancompany" theme={theme} />
+
     </>
   );
 }

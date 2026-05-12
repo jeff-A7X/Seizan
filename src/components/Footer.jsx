@@ -2,13 +2,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: "© 2026 Seizan, Inc."},
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms & Conditions", href: "#" },
-    { label: "Cookie Policy", href: "#" },
-    { label: "Legal Notice", href: "#" },
-    { label: "AI Disclaimer", href: "#" },
-    { label: "Feedback", href: "#" },
+    { label: "© 2026 Seizan, Inc." },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms & Conditions", href: "/terms-of-use" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
+    { label: "Legal Notice", href: "/legal-notice" },
+    { label: "AI Disclaimer", href: "/ai-disclaimer" },
+    { label: "Feedback", href: "/feedback" },
   ];
             
 
@@ -18,15 +18,17 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              {footerLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="hover:text-red-500 transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {footerLinks.map((link) =>
+                link.href ? (
+                  <a key={link.label} href={link.href} className="hover:text-red-500 transition-colors">
+                    {link.label}
+                  </a>
+                ) : (
+                  <span key={link.label} className="text-sm text-gray-600">
+                    {link.label}
+                  </span>
+                )
+              )}
             </div>
           </div>
 

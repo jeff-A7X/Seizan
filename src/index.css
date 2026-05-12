@@ -18,4 +18,15 @@
     color: #111827;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
+
+  /* Instagram embed: drop default white “card” so it sits on our section background */
+  .instagram-embed blockquote.instagram-media {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  .instagram-embed iframe {
+    border-radius: 0.5rem;
+  }
 }

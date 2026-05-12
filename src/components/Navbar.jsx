@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logoHeroDark from "../assets/icons/logoHeroDarkmode.png";
+import logoHeroLight from "../assets/icons/logoHeroLightmode.png";
 
 export default function Navbar({ theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +35,12 @@ export default function Navbar({ theme, toggleTheme }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 gap-4">
           <div className="flex-shrink-0">
-            <Link
-              to="/"
-              className="text-3xl font-bold text-gray-900 dark:text-gray-100 tracking-wide"
-            >
-              Seizan
+            <Link to="/" className="flex items-center">
+              <img
+                src={theme === "dark" ? logoHeroDark : logoHeroLight}
+                alt="Seizan"
+                className="h-10 w-auto"
+              />
             </Link>
           </div>
 

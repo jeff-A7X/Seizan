@@ -8,6 +8,10 @@ import Locations from "./pages/Locations";
 import Products from "./pages/Products";
 import MachineTypes from "./pages/MachineTypes";
 import WhoWeAre from "./pages/WhoWeAre";
+import AIDisclaimer from "./pages/AIDisclaimer";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
+import Feedback from "./pages/Feedback";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -37,12 +41,16 @@ function App() {
 
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home theme={theme} />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/products" element={<Products />} />
           <Route path="/machine-types" element={<MachineTypes />} />
           <Route path="/who-we-are" element={<WhoWeAre />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ai-disclaimer" element={<AIDisclaimer />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="/feedback" element={<Feedback />} />
         </Routes>
       </main>
 
