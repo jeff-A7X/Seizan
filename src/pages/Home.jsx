@@ -7,10 +7,16 @@ import hero5Image from "../assets/hero/hero6.png";
 import ch2Image from "../assets/images/mascot/final/маскот.png";
 import logoHeroDark from "../assets/icons/logoHeroDarkmode.png";
 import logoHeroLight from "../assets/icons/logoHeroLightmode.png";
-import Instagram from "../components/Instagram";
+const ELFSIGHT_SCRIPT_ID = "elfsight-platform-script";
 
 export default function Home({ theme }) {
-  const heroSlides = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image];
+  const heroSlides = [
+    hero1Image,
+    hero2Image,
+    hero3Image,
+    hero4Image,
+    hero5Image,
+  ];
   const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
@@ -18,6 +24,15 @@ export default function Home({ theme }) {
       setSlideIndex((prev) => (prev + 1) % heroSlides.length);
     }, 6000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (document.getElementById(ELFSIGHT_SCRIPT_ID)) return;
+    const script = document.createElement("script");
+    script.id = ELFSIGHT_SCRIPT_ID;
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
 
   return (
@@ -56,7 +71,7 @@ export default function Home({ theme }) {
 
           {/* Twinkling dot particles */}
           {[
-            { top: "15%", left: "8%",  size: 3, delay: "0s",   dur: "2.4s" },
+            { top: "15%", left: "8%", size: 3, delay: "0s", dur: "2.4s" },
             { top: "72%", left: "14%", size: 2, delay: "0.6s", dur: "3.1s" },
             { top: "30%", left: "25%", size: 4, delay: "1.2s", dur: "2.8s" },
             { top: "55%", left: "38%", size: 2, delay: "0.3s", dur: "2.2s" },
@@ -162,9 +177,24 @@ export default function Home({ theme }) {
         </div>
       </section>
 
-            {/* Instagram */}
-      <Instagram username="seizancompany" theme={theme} />
+      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-100">
+            Follow us on Instagram
+          </h2>
 
+          <p className="mt-2 mb-10 text-red-500 font-semibold">
+            @seizancompany
+          </p>
+
+          <div className="elfsight-feed mx-auto w-full max-w-6xl flex justify-center overflow-hidden rounded-xl">
+            <div
+              className="elfsight-app-9533ff22-39ba-4e97-a36a-84b682116350 w-full"
+              data-elfsight-app-lazy
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

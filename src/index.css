@@ -19,14 +19,15 @@
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
-  /* Instagram embed: drop default white “card” so it sits on our section background */
-  .instagram-embed blockquote.instagram-media {
-    background: transparent !important;
-    box-shadow: none !important;
-    border: 0 !important;
+  /* Elfsight Instagram widget: keep embed centered within our layout */
+  .elfsight-feed {
+    min-height: 200px;
   }
 
-  .instagram-embed iframe {
-    border-radius: 0.5rem;
+  .elfsight-feed > div {
+    width: 100% !important;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
