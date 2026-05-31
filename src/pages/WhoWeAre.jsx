@@ -1,5 +1,3 @@
-import jeff2Image from "../assets/portrait/jeff2.png";
-import sam2Image from "../assets/portrait/sam2.png";
 
 export default function WhoWeAre() {
   const portraitClass =
@@ -17,13 +15,8 @@ export default function WhoWeAre() {
             <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
               Jeffrey
             </h2>
-            <img
-              src={jeff2Image}
-              alt="Jeffrey"
-              className={portraitClass}
-            />
             <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
-              Jeffrey is the co-founder of Seizan. He is a software engineer and a business man.
+              Jeffrey is the co-founder of Seizan. He is a 2nd year student with a passion for anime games.
             </p>
           </div>
 
@@ -31,13 +24,8 @@ export default function WhoWeAre() {
             <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
               Sam
             </h2>
-            <img
-              src={sam2Image}
-              alt="Sam"
-              className={portraitClass}
-            />
             <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
-              Sam is the co-founder of Seizan. He is a business man and a software engineer.
+              Sam is the co-founder of Seizan. He is a 2nd year student in computer science and lives priamsingel 263
             </p>
           </div>
         </div>
