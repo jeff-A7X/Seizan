@@ -12,6 +12,7 @@ export default function Navbar({ theme, toggleTheme }) {
     { label: "Machine Types", to: "/machine-types" },
     { label: "Who We Are", to: "/who-we-are" },
     { label: "Contact", to: "/contact" },
+    // { label: "Store, to: "}
   ];
 
   const linkClass = ({ isActive }) =>
