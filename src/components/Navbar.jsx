@@ -11,6 +11,7 @@ export default function Navbar({ theme, toggleTheme }) {
     { label: "Products", to: "/products" },
     { label: "Machine Types", to: "/machine-types" },
     { label: "Who We Are", to: "/who-we-are" },
+    { label: "Community Polls", to: "/community-polls" },
     { label: "Contact", to: "/contact" },
     // { label: "Store, to: "}
   ];

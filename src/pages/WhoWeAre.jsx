@@ -5,6 +5,7 @@ export default function WhoWeAre() {
 
   return (
     <div className="min-h-screen bg-[#F2EDEA] dark:bg-slate-950 transition-colors duration-300">
+      <style>{`\n        /* Hide all images on this page except the main site logo (alt="Seizan") */\n        img:not([alt="Seizan"]) {\n          display: none !important;\n        }\n      `}</style>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-8 sm:py-10 pb-12 sm:pb-14">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 text-center py-6 mb-8 sm:mb-10">
           Who we are
@@ -25,7 +26,7 @@ export default function WhoWeAre() {
               Sam
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
-              Sam is the co-founder of Seizan. He is a 2nd year student in computer science and lives priamsingel 263
+              Sam is the co-founder of Seizan. He majors student in computer scien
             </p>
           </div>
         </div>

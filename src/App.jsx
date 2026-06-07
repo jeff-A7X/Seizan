@@ -8,6 +8,7 @@ import Locations from "./pages/Locations";
 import Products from "./pages/Products";
 import MachineTypes from "./pages/MachineTypes";
 import WhoWeAre from "./pages/WhoWeAre";
+import CommunityPolls from "./pages/CommunityPolls";
 import AIDisclaimer from "./pages/AIDisclaimer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
@@ -46,6 +47,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/machine-types" element={<MachineTypes />} />
           <Route path="/who-we-are" element={<WhoWeAre />} />
+          <Route path="/community-polls" element={<CommunityPolls />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ai-disclaimer" element={<AIDisclaimer />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
